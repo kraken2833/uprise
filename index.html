@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uprise Restaurant & Bar</title>
+  <!-- Font Awesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #FF5800;
+      --secondary-color: #000000;
+      --accent-color: #FFFFFF;
+    }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; color: var(--secondary-color); line-height: 1.6; }
+
+    /* Header & Navigation */
+    header { position: fixed; top: 0; width: 100%; background: rgba(0,0,0,0.8); z-index: 100; }
+    nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem; }
+    .logo { color: var(--accent-color); font-size: 1.5rem; font-weight: 700; }
+    nav ul { list-style: none; display: flex; gap: 1rem; }
+    nav ul li a { color: var(--accent-color); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+    nav ul li a:hover { color: var(--primary-color); }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: url('images/hero-bg.jpg') center/cover no-repeat;
+      text-align: center;
+      color: var(--accent-color);
+      padding: 0 1rem;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('back2.png') center/cover no-repeat;
+      opacity: 0.8;
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 { font-size: 3rem; margin-bottom: 1rem; animation: fadeInDown 1s ease-in; }
+    .hero p { font-size: 1.2rem; margin-bottom: 2rem; animation: fadeInUp 1s ease-in; }
+    .btn { background: var(--accent-color); color: var(--secondary-color); padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 50px; transition: transform 0.3s; }
+    .btn:hover { transform: scale(1.05); }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Sections */
+    section { padding: 4rem 1rem; max-width: 1200px; margin: 0 auto; }
+    .section-title { text-align: center; font-size: 2rem; margin-bottom: 2rem; color: var(--primary-color); }
+
+    /* Menu & Drinks Grid */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+    .card { background: var(--accent-color); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .card:hover { transform: scale(1.05); }
+    .card img, .card .icon { width: 100%; height: auto; display: block; }
+    .card-content { padding: 1rem; }
+    .card-content h3 { margin-bottom: 0.5rem; }
+    .card-content p { font-size: 0.9rem; margin-bottom: 1rem; }
+    .price { font-weight: 700; color: var(--primary-color); }
+
+    /* Footer */
+    footer { background: var(--secondary-color); color: var(--accent-color); text-align: center; padding: 2rem 1rem; }
+    .footer-icons { display: flex; justify-content: center; gap: 1rem; margin-bottom: 1rem; }
+    .footer-icons a { color: var(--accent-color); font-size: 1.5rem; transition: color 0.3s; }
+    .footer-icons a:hover { color: var(--primary-color); }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .hero p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo"><i class="fas fa-fire"></i> Uprise</div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#drinks">Drinks</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="home" class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Uprise Restaurant & Bar</h1>
+      <p>Experience the heat of flavor</p>
+      <a href="#menu" class="btn">View Menu</a>
+    </div>
+  </div>
+
+  <section id="menu">
+    <h2 class="section-title"><i class="fas fa-utensils"></i> Our Menu</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="steak.png" alt="Grilled Steak">
+        <div class="card-content">
+          <h3>Grilled Steak</h3>
+          <p>Juicy grilled steak with our signature spice rub.</p>
+          <div class="price">$190</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="chicken.png" alt="Spicy Chicken Wings">
+        <div class="card-content">
+          <h3>Spicy Chicken Wings</h3>
+          <p>Crispy wings tossed in a fiery hot sauce.</p>
+          <div class="price">$60</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="pasta.png" alt="Veggie Pasta">
+        <div class="card-content">
+          <h3>Veggie Pasta</h3>
+          <p>Fresh vegetables in a creamy Alfredo sauce.</p>
+          <div class="price">$100</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="ribs.png" alt="BBQ Ribs">
+        <div class="card-content">
+          <h3>BBQ Ribs</h3>
+          <p>Tender ribs glazed with our house BBQ sauce.</p>
+          <div class="price">$22</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="drinks">
+    <h2 class="section-title"><i class="fas fa-beer"></i> Drinks & Beers</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="icon"><i class="fas fa-cocktail fa-5x" style="color: var(--primary-color);"></i></div>
+        <div class="card-content">
+          <h3>Classic Margarita</h3>
+          <p>Tequila, lime juice, and triple sec.</p>
+          <div class="price">$40</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="icon"><i class="fas fa-beer fa-5x" style="color: var(--primary-color);"></i></div>
+        <div class="card-content">
+          <h3>IPA Beer</h3>
+          <p>Hoppy and refreshing India Pale Ale.</p>
+          <div class="price">$12</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="icon"><i class="fas fa-wine-glass-alt fa-5x" style="color: var(--primary-color);"></i></div>
+        <div class="card-content">
+          <h3>Red Wine</h3>
+          <p>Full-bodied Merlot.</p>
+          <div class="price">$60</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="icon"><i class="fas fa-glass-martini-alt fa-5x" style="color: var(--primary-color);"></i></div>
+        <div class="card-content">
+          <h3>Old Fashioned</h3>
+          <p>Bourbon, sugar, bitters, and orange peel.</p>
+          <div class="price">$65</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title"><i class="fas fa-phone"></i> Contact Us</h2>
+    <p style="text-align:center;">123 Uprise Ave, Flavor Town<br>Call us: (123) 456-7890</p>
+  </section>
+
+  <footer>
+    <div class="footer-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    <p>&copy; 2025 Uprise Restaurant & Bar. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
+
+
